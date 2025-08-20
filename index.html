@@ -1,0 +1,1065 @@
+<div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">或直接聯繫我們</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <button onclick="window.open('https://line.me/ti/p/spg', '_blank')" style="background: #00C300; color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        💬 加LINE好友
+                    </button>
+                    <button onclick="window.location.href='tel:0900012110'" style="background: #007bff; color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        📞 立即通話
+                    </button>
+                </div>
+            </div><!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D創想工坊 - 專業3D列印服務</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cube" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><polygon points="10,2 18,7 18,17 10,22 2,17 2,7" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23cube)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card:hover::before {
+            transform: rotate(45deg) scale(1.2);
+        }
+
+        .service-card:nth-child(2) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .service-card:nth-child(3) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .portfolio-filter {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: white;
+            opacity: 0.3;
+        }
+
+        .portfolio-item[data-category="decorative"] .portfolio-image::before {
+            content: '🏠';
+        }
+
+        .portfolio-item[data-category="functional"] .portfolio-image::before {
+            content: '🔧';
+        }
+
+        .portfolio-item[data-category="creative"] .portfolio-image::before {
+            content: '🎨';
+        }
+
+        .portfolio-item[data-category="production"] .portfolio-image::before {
+            content: '🏭';
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item[data-category="decorative"] .portfolio-category {
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+        }
+
+        .portfolio-item[data-category="functional"] .portfolio-category {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+
+        .portfolio-item[data-category="creative"] .portfolio-category {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+        }
+
+        .portfolio-item[data-category="production"] .portfolio-category {
+            background: linear-gradient(45deg, #fa709a, #fee140);
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .portfolio-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .spec-tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .portfolio-modal {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .upload-area {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border: 3px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-area:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.3);
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: white;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🔺 3D創想工坊</a>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#services">服務</a></li>
+                <li><a href="#portfolio">作品集</a></li>
+                <li><a href="#features">特色</a></li>
+                <li><a href="#upload">上傳檔案</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">從概念到實體，創新3D列印方案</h1>
+                <p class="fade-in">專業打樣：從概念到實體，創新3D列印方案<br>
+                客製化設計：個性化3D列印，打造獨特時尚<br>
+                創意無界限：優質3D列印服務，擁有無限可能性</p>
+                <a href="#services" class="cta-button fade-in">尋找快速、準確的解決方案？</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">我們的服務</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎯</div>
+                    <h3>專業打樣</h3>
+                    <p>從概念到實體，創新3D列印方案。快速原型服務，將您的設計概念迅速實現</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎨</div>
+                    <h3>客製化設計</h3>
+                    <p>個性化3D列印，打造獨特時尚。專業設計團隊協助您優化設計，確保最佳效果</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚀</div>
+                    <h3>創意無界限</h3>
+                    <p>優質3D列印服務，擁有無限可能性。從創意發想到完美呈現，讓您的產品更具競爭力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">精選作品集</h2>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" onclick="filterPortfolio('all')">全部作品</button>
+                <button class="filter-btn" onclick="filterPortfolio('decorative')">居家裝飾</button>
+                <button class="filter-btn" onclick="filterPortfolio('functional')">功能配件</button>
+                <button class="filter-btn" onclick="filterPortfolio('creative')">創意造型</button>
+                <button class="filter-btn" onclick="filterPortfolio('production')">量產服務</button>
+            </div>
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- 居家裝飾作品 -->
+                <div class="portfolio-item fade-in" data-category="decorative" onclick="openPortfolioModal('六角多肉植物盆', 'decorative', '時尚六角造型多肉植物盆，採用幾何美學設計，完美展現現代簡約風格。黑色霧面質感，搭配任何居家環境都能成為亮點。', ['PLA+材質', '霧面後處理', '排水孔設計', '環保材料'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">居家裝飾</span>
+                        <h3 class="portfolio-title">六角多肉植物盆</h3>
+                        <p class="portfolio-description">幾何美學設計，現代簡約風格的多肉植物盆</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PLA+材質</span>
+                            <span class="spec-tag">霧面質感</span>
+                            <span class="spec-tag">排水設計</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item fade-in" data-category="creative" onclick="openPortfolioModal('龍貓造型公仔', 'creative', '經典宮崎駿動畫角色龍貓，精細的多色列印技術呈現完美細節。可愛的表情和質感讓人愛不釋手，是動漫愛好者的必備收藏。', ['多色PLA', '精細層高', '手工後處理', '收藏級品質'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">創意造型</span>
+                        <h3 class="portfolio-title">龍貓造型公仔</h3>
+                        <p class="portfolio-description">宮崎駿經典角色，多色精細列印技術</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">多色列印</span>
+                            <span class="spec-tag">精細細節</span>
+                            <span class="spec-tag">收藏級</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 功能配件作品 -->
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('任天堂問號方塊', 'functional', '經典瑪利歐遊戲中的問號方塊，不僅是裝飾品更是實用的收納盒。精確的卡扣設計，開合順暢，是遊戲迷的完美桌面配件。', ['ABS材質', '卡扣機構', '收納功能', '遊戲週邊'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">任天堂問號方塊</h3>
+                        <p class="portfolio-description">瑪利歐經典道具，兼具收納功能的實用設計</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">ABS材質</span>
+                            <span class="spec-tag">收納功能</span>
+                            <span class="spec-tag">精密卡扣</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('肥皂瀝水架', 'functional', '簡約實用的肥皂瀝水架，流線型設計確保良好的排水效果。防滑底座設計，穩固耐用，讓浴室更加整潔有序。', ['PETG材質', '防滑設計', '快速排水', '抗菌處理'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">肥皂瀝水架</h3>
+                        <p class="portfolio-description">實用的浴室配件，流線設計與排水功能</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PETG材質</span>
+                            <span class="spec-tag">防滑底座</span>
+                            <span class="spec-tag">快速排水</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 創意造型作品 -->
+                <div class="portfolio-item fade-in" data-category="creative" onclick="openPortfolioModal('螺旋造型花瓶', 'creative', '獨特的螺旋扭轉造型，展現3D列印技術的無限可能。漸變的線條設計，無論是裝飾或實用都是絕佳選擇。', ['PLA材質', '螺旋造型', '漸變設計', '藝術品級'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">創意造型</span>
+                        <h3 class="portfolio-title">螺旋造型花瓶</h3>
+                        <p class="portfolio-description">獨特螺旋設計，展現3D列印藝術美感</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PLA材質</span>
+                            <span class="spec-tag">螺旋造型</span>
+                            <span class="spec-tag">藝術級</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item fade-in" data-category="creative" onclick="openPortfolioModal('龍貓巴士模型', 'creative', '宮崎駿動畫中的經典龍貓巴士，雙色列印技術完美呈現黃褐配色。精細的窗戶和毛髮紋理，每個細節都精雕細琢。', ['雙色PLA', '精細紋理', '動畫還原', '限量製作'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">創意造型</span>
+                        <h3 class="portfolio-title">龍貓巴士模型</h3>
+                        <p class="portfolio-description">宮崎駿經典角色，雙色精細製作</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">雙色列印</span>
+                            <span class="spec-tag">精細紋理</span>
+                            <span class="spec-tag">動畫還原</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 量產服務作品 -->
+                <div class="portfolio-item fade-in" data-category="production" onclick="openPortfolioModal('矽膠模具製作', 'production', '精密的矽膠模具製作服務，可批量生產各種小物件。模具設計考量脫模角度和排氣，確保量產品質穩定一致。', ['高精度樹脂', '批量生產', '品質一致', '快速交付'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">量產服務</span>
+                        <h3 class="portfolio-title">矽膠模具製作</h3>
+                        <p class="portfolio-description">精密模具設計，適合批量生產需求</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">精密模具</span>
+                            <span class="spec-tag">批量生產</span>
+                            <span class="spec-tag">品質穩定</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('透氣收納盒', 'functional', '實用的透氣式收納盒，規律的圓形孔洞設計不僅美觀，更提供良好的通風效果。適合收納各種小物件，讓空間更加整潔有序。', ['PLA+材質', '透氣設計', '收納功能', '簡約風格'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">透氣收納盒</h3>
+                        <p class="portfolio-description">規律孔洞設計，兼具美觀與透氣功能</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PLA+材質</span>
+                            <span class="spec-tag">透氣設計</span>
+                            <span class="spec-tag">收納功能</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('Gogoro充電站模型', 'functional', '精細仿真的Gogoro電池交換站模型，完整重現真實充電站的外觀和功能細節。包含LCD顯示屏、電池槽設計和品牌標識，適合展示、教學或收藏用途。', ['ABS外殼', '精密仿真', '展示模型', '品牌授權'])">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">Gogoro充電站模型</h3>
+                        <p class="portfolio-description">精細仿真電池交換站，完美重現真實設備</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">ABS材質</span>
+                            <span class="spec-tag">精密仿真</span>
+                            <span class="spec-tag">展示模型</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modal -->
+    <div class="portfolio-overlay" id="portfolioModal">
+        <div class="portfolio-modal">
+            <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">為什麼選擇我們</h2>
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>快速交付</h3>
+                    <p>24-72小時快速交付</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">🔧</div>
+                    <h3>多種材料</h3>
+                    <p>PLA, ABS, PETG, 樹脂等</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">📐</div>
+                    <h3>高精度</h3>
+                    <p>±0.1mm精度保證</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">💰</div>
+                    <h3>合理價格</h3>
+                    <p>透明化計價，無隱藏費用</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2 class="section-title">立即與我聯繫，共同探討您的需求</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                我提供高效的3D列印服務，無論是原型打樣還是定制零件<br>
+                我將為您提供最佳解決方案，讓您的產品更具競爭力
+            </p>
+            <div class="upload-area" onclick="triggerFileUpload()">
+                <div class="upload-icon">📁</div>
+                <h3>點擊或拖拽檔案到此處</h3>
+                <p>支援 STL, OBJ, 3MF 格式<br>檔案大小限制：50MB</p>
+                <input type="file" id="fileUpload" style="display: none;" accept=".stl,.obj,.3mf" onchange="handleFileUpload(event)">
+            </div>
+            <div id="uploadResult" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">聯絡我們</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">多種聯絡方式，選擇最適合您的</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem 1.5rem; border-radius: 15px; backdrop-filter: blur(10px); cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='tel:0900012110'" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <p style="margin: 0; font-weight: bold;">📞 電話</p>
+                        <p style="margin: 0;">0900-012-110</p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">點擊撥打</p>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem 1.5rem; border-radius: 15px; backdrop-filter: blur(10px); cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='mailto:sstarfly@gmail.com'" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <p style="margin: 0; font-weight: bold;">📧 Email</p>
+                        <p style="margin: 0;">sstarfly@gmail.com</p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">點擊發信</p>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem 1.5rem; border-radius: 15px; backdrop-filter: blur(10px); cursor: pointer; transition: all 0.3s ease;" onclick="window.open('https://line.me/ti/p/spg', '_blank')" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <p style="margin: 0; font-weight: bold;">💬 LINE ID</p>
+                        <p style="margin: 0;">spg</p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">點擊加好友</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="contact-method">聯絡方式</label>
+                    <select id="contact-method" name="contact-method" style="width: 100%; padding: 12px; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.9); font-size: 1rem;">
+                        <option value="email">Email</option>
+                        <option value="phone">電話</option>
+                        <option value="line">LINE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">電子郵件</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">電話 / LINE ID</label>
+                    <input type="tel" id="phone" name="phone" placeholder="請輸入電話號碼或LINE ID">
+                </div>
+                <div class="form-group">
+                    <label for="project">專案描述</label>
+                    <textarea id="project" name="project" rows="4" placeholder="請描述您的專案需求..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">送出詢問</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 3D創想工坊. 版權所有 | 聯絡人：朱昱昌 | 📞 0900-012-110 | 📧 sstarfly@gmail.com | 💬 LINE: spg</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.animationDelay = '0.2s';
+                    element.classList.add('fade-in');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on load
+
+        // File upload functionality
+        function triggerFileUpload() {
+            document.getElementById('fileUpload').click();
+        }
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const resultDiv = document.getElementById('uploadResult');
+            
+            if (file) {
+                const fileSize = (file.size / 1024 / 1024).toFixed(2); // Convert to MB
+                const allowedTypes = ['.stl', '.obj', '.3mf'];
+                const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
+                
+                if (!allowedTypes.includes(fileExtension)) {
+                    resultDiv.innerHTML = '<span style="color: #ff6b6b;">❌ 不支援的檔案格式</span>';
+                    return;
+                }
+                
+                if (file.size > 50 * 1024 * 1024) { // 50MB limit
+                    resultDiv.innerHTML = '<span style="color: #ff6b6b;">❌ 檔案大小超過限制 (50MB)</span>';
+                    return;
+                }
+                
+                resultDiv.innerHTML = `<span style="color: #43e97b;">✅ 檔案上傳成功: ${file.name} (${fileSize} MB)</span>`;
+                
+                // Simulate processing
+                setTimeout(() => {
+                    resultDiv.innerHTML += '<br><span style="color: #4facfe;">📊 正在分析檔案...</span>';
+                    
+                    setTimeout(() => {
+                        resultDiv.innerHTML += '<br><span style="color: #43e97b;">✅ 分析完成！預估價格: NT$350-500</span>';
+                    }, 2000);
+                }, 1000);
+            }
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const contactMethod = document.getElementById('contact-method').value;
+            
+            if (name && (email || phone)) {
+                let contactInfo = '';
+                if (contactMethod === 'line') {
+                    contactInfo = `LINE ID: ${phone}`;
+                } else if (contactMethod === 'phone') {
+                    contactInfo = `電話: ${phone}`;
+                } else {
+                    contactInfo = `Email: ${email}`;
+                }
+                
+                alert(`感謝 ${name}！我們已收到您的詢問，將透過 ${contactInfo} 在24小時內回覆`);
+                event.target.reset();
+            }
+        }
+
+        // Add floating animation to service cards
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            card.style.animation = 'float 6s ease-in-out infinite';
+        });
+
+        // Portfolio filtering
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    item.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Portfolio modal
+        function openPortfolioModal(title, category, description, specs) {
+            const modal = document.getElementById('portfolioModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            const categoryNames = {
+                'decorative': '居家裝飾',
+                'functional': '功能配件', 
+                'creative': '創意造型',
+                'production': '量產服務'
+            };
+            
+            modalContent.innerHTML = `
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <div style="width: 200px; height: 200px; margin: 0 auto; background: linear-gradient(45deg, #667eea, #764ba2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; opacity: 0.7; margin-bottom: 1rem;">
+                        ${category === 'decorative' ? '🏠' : category === 'functional' ? '🔧' : category === 'creative' ? '🎨' : '🏭'}
+                    </div>
+                    <span style="background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;">
+                        ${categoryNames[category]}
+                    </span>
+                </div>
+                <h2 style="text-align: center; margin-bottom: 1rem; color: #333;">${title}</h2>
+                <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem; text-align: center;">${description}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                    ${specs.map(spec => `<span style="background: #f0f0f0; color: #666; padding: 5px 12px; border-radius: 15px; font-size: 0.9rem;">${spec}</span>`).join('')}
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="closePortfolioModal()" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-size: 1rem;">
+                        關閉
+                    </button>
+                </div>
+            `;
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        document.getElementById('portfolioModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePortfolioModal();
+            }
+        });
+    </script>
+</body>
+</html>
