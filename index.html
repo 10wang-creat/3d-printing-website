@@ -1,14 +1,4 @@
-<div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">或直接聯繫我們</p>
-                <div style="display: flex; justify-content: center; gap: 1rem;">
-                    <button onclick="window.open('https://line.me/ti/p/spg', '_blank')" style="background: #00C300; color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                        💬 加LINE好友
-                    </button>
-                    <button onclick="window.location.href='tel:0900012110'" style="background: #007bff; color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                        📞 立即通話
-                    </button>
-                </div>
-            </div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -224,38 +214,6 @@
             z-index: 2;
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
         /* Portfolio Section */
         .portfolio {
             padding: 80px 0;
@@ -456,6 +414,38 @@
             color: #333;
         }
 
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
         /* Upload Section */
         .upload-section {
             padding: 80px 0;
@@ -512,7 +502,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 12px;
             border: none;
@@ -523,7 +514,8 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             background: white;
         }
@@ -649,21 +641,22 @@
                 <button class="filter-btn" onclick="filterPortfolio('creative')">創意造型</button>
                 <button class="filter-btn" onclick="filterPortfolio('production')">量產服務</button>
             </div>
-                <!-- 居家裝飾作品 -->
-                <div class="portfolio-item fade-in" data-category="decorative" onclick="openPortfolioModal('六角多肉植物盆', 'decorative', '時尚六角造型多肉植物盆，採用幾何美學設計，完美展現現代簡約風格。黑色霧面質感，搭配任何居家環境都能成為亮點。', ['PLA+材質', '霧面後處理', '排水孔設計', '環保材料'])">
-                    <div class="portfolio-image" style="background-image: url('images/succulent-pot.jpg');"></div>
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- 最想推廣：檢驗載體製作 -->
+                <div class="portfolio-item fade-in" data-category="production" onclick="openPortfolioModal('檢驗載體製作', 'production', '專業的產品檢驗載體，具有精確的凹槽設計，可將產品固定在特定位置進行掃描檢驗。確保檢驗過程的一致性和準確性，廣泛應用於品質控制流程。可依照需求客製化設計。', ['高精度樹脂', '精密定位', '品質檢驗', '客製化設計'])">
+                    <div class="portfolio-image" style="background-image: url('images/inspection-jig.jpg');"></div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">居家裝飾</span>
-                        <h3 class="portfolio-title">六角多肉植物盆</h3>
-                        <p class="portfolio-description">幾何美學設計，現代簡約風格的多肉植物盆</p>
+                        <span class="portfolio-category">量產服務</span>
+                        <h3 class="portfolio-title">檢驗載體製作</h3>
+                        <p class="portfolio-description">精密檢驗載體，用於產品掃描檢驗的定位治具</p>
                         <div class="portfolio-specs">
-                            <span class="spec-tag">PLA+材質</span>
-                            <span class="spec-tag">霧面質感</span>
-                            <span class="spec-tag">排水設計</span>
+                            <span class="spec-tag">精密仿真</span>
+                            <span class="spec-tag">展示模型</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- 動漫模型：龍貓造型公仔 -->
                 <div class="portfolio-item fade-in" data-category="creative" onclick="openPortfolioModal('龍貓造型公仔', 'creative', '經典宮崎駿動畫角色龍貓，精細的多色列印技術呈現完美細節。可愛的表情和質感讓人愛不釋手，是動漫愛好者的必備收藏。', ['多色PLA', '精細層高', '手工後處理', '收藏級品質'])">
                     <div class="portfolio-image" style="background-image: url('images/totoro-figure.jpg');"></div>
                     <div class="portfolio-content">
@@ -678,50 +671,7 @@
                     </div>
                 </div>
 
-                <!-- 功能配件作品 -->
-                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('任天堂問號方塊', 'functional', '經典瑪利歐遊戲中的問號方塊，不僅是裝飾品更是實用的收納盒。精確的卡扣設計，開合順暢，是遊戲迷的完美桌面配件。', ['ABS材質', '卡扣機構', '收納功能', '遊戲週邊'])">
-                    <div class="portfolio-image" style="background-image: url('images/question-block.jpg');"></div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-category">功能配件</span>
-                        <h3 class="portfolio-title">任天堂問號方塊</h3>
-                        <p class="portfolio-description">瑪利歐經典道具，兼具收納功能的實用設計</p>
-                        <div class="portfolio-specs">
-                            <span class="spec-tag">ABS材質</span>
-                            <span class="spec-tag">收納功能</span>
-                            <span class="spec-tag">精密卡扣</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('肥皂瀝水架', 'functional', '簡約實用的肥皂瀝水架，流線型設計確保良好的排水效果。防滑底座設計，穩固耐用，讓浴室更加整潔有序。', ['PETG材質', '防滑設計', '快速排水', '抗菌處理'])">
-                    <div class="portfolio-image" style="background-image: url('images/soap-dish.jpg');"></div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-category">功能配件</span>
-                        <h3 class="portfolio-title">肥皂瀝水架</h3>
-                        <p class="portfolio-description">實用的浴室配件，流線設計與排水功能</p>
-                        <div class="portfolio-specs">
-                            <span class="spec-tag">PETG材質</span>
-                            <span class="spec-tag">防滑底座</span>
-                            <span class="spec-tag">快速排水</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 創意造型作品 -->
-                <div class="portfolio-item fade-in" data-category="creative" onclick="openPortfolioModal('螺旋造型模型', 'creative', '純粹的螺旋幾何造型模型，展現3D列印在複雜幾何結構上的精準表現。流暢的螺旋線條一體成型，無需支撐材料，充分體現了積層製造的技術優勢。', ['PLA材質', '螺旋造型', '一體成型', '無支撐列印'])">
-                    <div class="portfolio-image" style="background-image: url('images/spiral-model.jpg');"></div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-category">創意造型</span>
-                        <h3 class="portfolio-title">螺旋造型模型</h3>
-                        <p class="portfolio-description">純粹螺旋幾何設計，展現3D列印複雜結構能力</p>
-                        <div class="portfolio-specs">
-                            <span class="spec-tag">PLA材質</span>
-                            <span class="spec-tag">螺旋造型</span>
-                            <span class="spec-tag">一體成型</span>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- 動漫模型：龍貓巴士模型 -->
                 <div class="portfolio-item fade-in" data-category="creative" onclick="openPortfolioModal('龍貓巴士模型', 'creative', '宮崎駿動畫中的經典龍貓巴士，雙色列印技術完美呈現黃褐配色。精細的窗戶和毛髮紋理，每個細節都精雕細琢。', ['雙色PLA', '精細紋理', '動畫還原', '限量製作'])">
                     <div class="portfolio-image" style="background-image: url('images/catbus-model.jpg');"></div>
                     <div class="portfolio-content">
@@ -732,49 +682,6 @@
                             <span class="spec-tag">雙色列印</span>
                             <span class="spec-tag">精細紋理</span>
                             <span class="spec-tag">動畫還原</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 量產服務作品 -->
-                <div class="portfolio-item fade-in" data-category="production" onclick="openPortfolioModal('檢驗載體製作', 'production', '專業的產品檢驗載體，具有精確的凹槽設計，可將產品固定在特定位置進行掃描檢驗。確保檢驗過程的一致性和準確性，廣泛應用於品質控制流程。', ['高精度樹脂', '精密定位', '品質檢驗', '批量製作'])">
-                    <div class="portfolio-image" style="background-image: url('images/inspection-jig.jpg');"></div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-category">量產服務</span>
-                        <h3 class="portfolio-title">檢驗載體製作</h3>
-                        <p class="portfolio-description">精密檢驗載體，用於產品掃描檢驗的定位治具</p>
-                        <div class="portfolio-specs">
-                            <span class="spec-tag">精密定位</span>
-                            <span class="spec-tag">品質檢驗</span>
-                            <span class="spec-tag">批量製作</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('透氣收納盒', 'functional', '實用的透氣式收納盒，規律的圓形孔洞設計不僅美觀，更提供良好的通風效果。適合收納各種小物件，讓空間更加整潔有序。', ['PLA+材質', '透氣設計', '收納功能', '簡約風格'])">
-                    <div class="portfolio-image" style="background-image: url('images/storage-box.jpg');"></div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-category">功能配件</span>
-                        <h3 class="portfolio-title">透氣收納盒</h3>
-                        <p class="portfolio-description">規律孔洞設計，兼具美觀與透氣功能</p>
-                        <div class="portfolio-specs">
-                            <span class="spec-tag">PLA+材質</span>
-                            <span class="spec-tag">透氣設計</span>
-                            <span class="spec-tag">收納功能</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('Gogoro充電站模型', 'functional', '精細仿真的Gogoro電池交換站模型，完整重現真實充電站的外觀和功能細節。包含LCD顯示屏、電池槽設計和品牌標識，適合展示、教學或收藏用途。', ['ABS外殼', '精密仿真', '展示模型', '品牌授權'])">
-                    <div class="portfolio-image" style="background-image: url('images/gogoro-station.jpg');"></div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-category">功能配件</span>
-                        <h3 class="portfolio-title">Gogoro充電站模型</h3>
-                        <p class="portfolio-description">精細仿真電池交換站，完美重現真實設備</p>
-                        <div class="portfolio-specs">
-                            <span class="spec-tag">ABS材質</span>
-                            <span class="spec-tag">精密仿真</span>
-                            <span class="spec-tag">展示模型</span>
                         </div>
                     </div>
                 </div>
@@ -861,7 +768,7 @@
             <form class="contact-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="contact-method">聯絡方式</label>
-                    <select id="contact-method" name="contact-method" style="width: 100%; padding: 12px; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.9); font-size: 1rem;">
+                    <select id="contact-method" name="contact-method">
                         <option value="email">Email</option>
                         <option value="phone">電話</option>
                         <option value="line">LINE</option>
@@ -885,6 +792,17 @@
                 </div>
                 <button type="submit" class="submit-btn">送出詢問</button>
             </form>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1rem;">或直接聯繫我們</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <button onclick="window.open('https://line.me/ti/p/spg', '_blank')" style="background: #00C300; color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        💬 加LINE好友
+                    </button>
+                    <button onclick="window.location.href='tel:0900012110'" style="background: #007bff; color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        📞 立即通話
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -987,12 +905,6 @@
             }
         }
 
-        // Add floating animation to service cards
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.2}s`;
-            card.style.animation = 'float 6s ease-in-out infinite';
-        });
-
         // Portfolio filtering
         function filterPortfolio(category) {
             const items = document.querySelectorAll('.portfolio-item');
@@ -1062,6 +974,103 @@
                 closePortfolioModal();
             }
         });
+
+        // Add floating animation to service cards
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            card.style.animation = 'float 6s ease-in-out infinite';
+        });
     </script>
 </body>
-</html>
+</html>密定位</span>
+                            <span class="spec-tag">品質檢驗</span>
+                            <span class="spec-tag">客製化設計</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技術特點：螺旋造型模型 -->
+                <div class="portfolio-item fade-in" data-category="creative" onclick="openPortfolioModal('螺旋造型模型', 'creative', '純粹的螺旋幾何造型模型，展現3D列印在複雜幾何結構上的精準表現。流暢的螺旋線條一體成型，無需支撐材料，充分體現了積層製造的技術優勢和設計自由度。', ['PLA材質', '螺旋造型', '一體成型', '無支撐列印'])">
+                    <div class="portfolio-image" style="background-image: url('images/spiral-model.jpg');"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">創意造型</span>
+                        <h3 class="portfolio-title">螺旋造型模型</h3>
+                        <p class="portfolio-description">純粹螺旋幾何設計，展現3D列印複雜結構能力</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PLA材質</span>
+                            <span class="spec-tag">螺旋造型</span>
+                            <span class="spec-tag">一體成型</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 日常用品：六角多肉植物盆 -->
+                <div class="portfolio-item fade-in" data-category="decorative" onclick="openPortfolioModal('六角多肉植物盆', 'decorative', '時尚六角造型多肉植物盆，採用幾何美學設計，完美展現現代簡約風格。黑色霧面質感，搭配任何居家環境都能成為亮點。', ['PLA+材質', '霧面後處理', '排水孔設計', '環保材料'])">
+                    <div class="portfolio-image" style="background-image: url('images/succulent-pot.jpg');"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">居家裝飾</span>
+                        <h3 class="portfolio-title">六角多肉植物盆</h3>
+                        <p class="portfolio-description">幾何美學設計，現代簡約風格的多肉植物盆</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PLA+材質</span>
+                            <span class="spec-tag">霧面質感</span>
+                            <span class="spec-tag">排水設計</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 日常用品：肥皂瀝水架 -->
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('肥皂瀝水架', 'functional', '簡約實用的肥皂瀝水架，流線型設計確保良好的排水效果。防滑底座設計，穩固耐用，讓浴室更加整潔有序。', ['PETG材質', '防滑設計', '快速排水', '抗菌處理'])">
+                    <div class="portfolio-image" style="background-image: url('images/soap-dish.jpg');"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">肥皂瀝水架</h3>
+                        <p class="portfolio-description">實用的浴室配件，流線設計與排水功能</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PETG材質</span>
+                            <span class="spec-tag">防滑底座</span>
+                            <span class="spec-tag">快速排水</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 日常用品：透氣收納盒 -->
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('透氣收納盒', 'functional', '實用的透氣式收納盒，規律的圓形孔洞設計不僅美觀，更提供良好的通風效果。適合收納各種小物件，讓空間更加整潔有序。', ['PLA+材質', '透氣設計', '收納功能', '簡約風格'])">
+                    <div class="portfolio-image" style="background-image: url('images/storage-box.jpg');"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">透氣收納盒</h3>
+                        <p class="portfolio-description">規律孔洞設計，兼具美觀與透氣功能</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">PLA+材質</span>
+                            <span class="spec-tag">透氣設計</span>
+                            <span class="spec-tag">收納功能</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 知名模型：任天堂問號方塊 -->
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('任天堂問號方塊', 'functional', '經典瑪利歐遊戲中的問號方塊，不僅是裝飾品更是實用的收納盒。精確的卡扣設計，開合順暢，是遊戲迷的完美桌面配件。', ['ABS材質', '卡扣機構', '收納功能', '遊戲週邊'])">
+                    <div class="portfolio-image" style="background-image: url('images/question-block.jpg');"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">任天堂問號方塊</h3>
+                        <p class="portfolio-description">瑪利歐經典道具，兼具收納功能的實用設計</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">ABS材質</span>
+                            <span class="spec-tag">收納功能</span>
+                            <span class="spec-tag">精密卡扣</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 知名模型：Gogoro充電站模型 -->
+                <div class="portfolio-item fade-in" data-category="functional" onclick="openPortfolioModal('Gogoro充電站模型', 'functional', '精細仿真的Gogoro電池交換站模型，完整重現真實充電站的外觀和功能細節。包含LCD顯示屏、電池槽設計和品牌標識，適合展示、教學或收藏用途。', ['ABS外殼', '精密仿真', '展示模型', '品牌授權'])">
+                    <div class="portfolio-image" style="background-image: url('images/gogoro-station.jpg');"></div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">功能配件</span>
+                        <h3 class="portfolio-title">Gogoro充電站模型</h3>
+                        <p class="portfolio-description">精細仿真電池交換站，完美重現真實設備</p>
+                        <div class="portfolio-specs">
+                            <span class="spec-tag">ABS材質</span>
+                            <span class="spec-tag">精
