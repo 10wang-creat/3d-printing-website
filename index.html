@@ -1094,10 +1094,28 @@
                 'production': '客製化治具'
             };
             
+            // 根據標題獲取對應的圖片URL
+            const imageMap = {
+                '檢驗載體製作': 'images/inspection-jig.jpg',
+                '車泊排風扇 - 可調風向': 'images/camper-fan-adjustable.jpg',
+                '車泊排風扇 - 晴雨罩': 'images/camper-fan-rain-cover.jpg',
+                '強力吹風機': 'images/power-hair-dryer.jpg',
+                '雙手錶充電器': 'images/dual-watch-charger.jpg',
+                '螺旋造型模型': 'images/spiral-model.jpg',
+                '六角多肉植物盆': 'images/succulent-pot.jpg',
+                '肥皂瀝水架': 'images/soap-dish.jpg',
+                '多功能收納盒': 'images/modular-storage-box.jpg',
+                '浴室置物架': 'images/bathroom-shelf.jpg',
+                '橢圓機手機架': 'images/elliptical-phone-holder.jpg',
+                '透氣收納盒': 'images/storage-box.jpg',
+                '任天堂問號方塊': 'images/question-block.jpg'
+            };
+            
+            const imageUrl = imageMap[title] || '';
+            
             modalContent.innerHTML = `
                 <div style="text-align: center; margin-bottom: 1.5rem;">
-                    <div style="width: 200px; height: 200px; margin: 0 auto; background: linear-gradient(45deg, #667eea, #764ba2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; opacity: 0.7; margin-bottom: 1rem;">
-                        ${category === 'decorative' ? '🏠' : category === 'functional' ? '🔧' : category === 'creative' ? '🎨' : '🏭'}
+                    <div style="width: 300px; height: 200px; margin: 0 auto; border-radius: 15px; overflow: hidden; margin-bottom: 1rem; background-size: cover; background-position: center; background-repeat: no-repeat; background-image: url('${imageUrl}'), linear-gradient(45deg, #667eea, #764ba2);">
                     </div>
                     <span style="background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;">
                         ${categoryNames[category]}
